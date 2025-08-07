@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
@@ -15,11 +16,40 @@
     </header>
     <main>
         <h1>Contacto</h1>
+        <form onsubmit="mostrarMensaje(event)">
+            <div class="form-group" onsubmit="mostrarMensaje(event)">
+                <label for="name">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="mensaje">Mensaje:</label>
+                <input type="text" id="mensaje" name="mensaje" required>
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+
+        <div id="mensaje-enviado" style="display: none; color: green; margin-top: 10px;">
+            <h3>Mensaje enviado correctamente..!!!!</h3>
+        </div>
+        
     </main>
 
     <footer>
+        <p>&copy; 2025 -mi portfolio</p>
 
     </footer>
+    <script>
+        function mostrarMensaje(event){
+            event.preventDefault();
+            document.getElementById("mensaje-enviado").style.display= "block";
+            document.querySelector("form-group").reset();
+            setTimeout(function(){
+                document.getElementById("mensaje-enviado").style.display= "none";
+            }, 3000);
+        }
+    </script>
+    
+    
     
 </body>
 </html>
