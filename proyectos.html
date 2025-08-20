@@ -4,63 +4,57 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/inside-logo-32.png">
-    <title>Cristian Calvo</title>
-  <meta name="description" content="Portfolio de desarrollador full stack. Proyectos, habilidades y contacto." />
+  <title>Portfolio – Proyectos</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
 
-  <!-- NAV -->
+<body>
   <nav aria-label="Principal">
     <div class="wrap nav">
       <a href="index.html" class="logo">PORTFOLIO</a>
-      <ul class="menu">
-        <li><a class="is-active" href="index.html">Inicio</a></li>
-        <li><a href="proyectos.html">Proyectos</a></li>
+      <ul class="menu" role="list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a class="is-active" href="proyectos.html">Proyectos</a></li>
         <li><a href="contacto.html">Contacto</a></li>
         <li><a href="cv.html">CV</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- HEADER -->
-  <header id="home"> 
-    <div class="inside-bg"></div>
+  <header class="page-header">
     <div class="wrap">
-      <h1>HI, my name is Cristian</h1>
-      <p class="subtitle">Full Stack Developer</p>
-      <p class="lead">Construyendo experiencias digitales con foco en arquitectura simple, rendimiento y mantenimiento a largo plazo.</p>
+      <h1>Proyectos</h1>
+      <p class="lead">Una selección breve de trabajos y experimentos.</p>
     </div>
   </header>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <h2>Sobre Mí</h2>
-    <div class="wrap grid about">
-      <div>
-        <p>Programador full stack. Me enfoco en soluciones claras, escalables y fáciles de operar. Valoro las buenas prácticas, la observabilidad y la documentación mínima indispensable.</p>
-        <p>Stack principal: TypeScript, React/Next.js, Node/NestJS, PostgreSQL/MongoDB, Docker.</p>
-      </div>
-      <div>
-        <div class="skills">
-          <div class="skill">TypeScript</div>
-          <div class="skill">JavaScript </div>
-          <div class="skill">Nest.js</div>
-          <div class="skill">React</div>
-          <div class="skill">Docker</div>
-          <div class="skill">Node.js</div>
-          <div class="skill">PostgreSQL / MongoDB</div>
-          <div class="skill">CSS / Tailwind</div>
-          <div class="skill">Docker</div>
-          <div class="skill">AWS</div>
-          <div class="skill">Github</div>
-          <div class="skill">Solidity</div>
+  <section>
+    <div class="wrap grid cards">
+      <article class="card">
+        <h3>Reproductor + IA</h3>
+        <p>App que reproduce música desde YouTube y genera imágenes IA en base a la canción. Backend en NestJS.</p>
+        <div class="tech">
+          <span class="tag">Next.js</span><span class="tag">NestJS</span><span class="tag">PostgreSQL</span>
         </div>
-      </div>
+      </article>
+      <article class="card">
+        <h3>Cypher Protocol</h3>
+        <p>Mensajería con cifrado end-to-end y WebRTC.</p>
+        <div class="tech">
+          <span class="tag">TypeScript</span><span class="tag">WebRTC</span><span class="tag">Crypto</span>
+        </div>
+      </article>
+      <article class="card">
+        <h3>Dark Interface</h3>
+        <p>Mini framework UI minimalista y accesible para dashboards.</p>
+        <div class="tech">
+          <span class="tag">CSS</span><span class="tag">JS</span><span class="tag">A11y</span>
+        </div>
+      </article>
     </div>
   </section>
 
- <!-- FOOTER -->
+  <!-- FOOTER -->
 <footer id="contact">
   <p>// Redes \\</p>
   <div class="social-links">
@@ -78,7 +72,6 @@
     </a>
   </div>
 </footer>
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
