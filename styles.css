@@ -436,3 +436,74 @@ footer {
   5%, 50%      { top: -50vh; opacity: 1; }
   55%, 100%    { top: 50vh; opacity: 1; }
 }
+
+/* =====================================================
+   Notificaions 
+   ===================================================== */
+.matrix-notification {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 30px 40px;
+  z-index: 10000;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  min-width: 300px;
+  text-align: center;
+}
+
+.matrix-notification.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.notification-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  animation: scan-notification 2s linear infinite;
+}
+
+.matrix-notification.error .notification-line {
+  background: linear-gradient(90deg, transparent, #ff0000, transparent);
+}
+
+@keyframes scan-notification {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.notification-type {
+  color: var(--accent);
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.matrix-notification.error .notification-type {
+  color: #ff0000;
+}
+
+.notification-msg {
+  color: var(--text);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Efecto de interferencia en error */
+.matrix-notification.error {
+  animation: interference 0.3s;
+}
+
+@keyframes interference {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  25% { transform: translate(-48%, -50%) scale(1); }
+  75% { transform: translate(-52%, -50%) scale(1); }
+}

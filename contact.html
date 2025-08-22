@@ -8,8 +8,9 @@
   <meta name="description" content="Full Stack Developer Portfolio — Projects, Skills & Contact." />
   <link rel="stylesheet" href="styles.css">
 </head>
-<div class="scanline"></div>
+
 <body>
+  
   <nav aria-label="Principal">
     <div class="wrap nav">
       <a href="index.html" class="logo">PORTFOLIO</a>
@@ -31,7 +32,7 @@
 
   <section>
     <div class="wrap">
-      <form class="contact-form" action="#" method="post" onsubmit="event.preventDefault(); alert('Mensaje enviado (demo).');">
+      <form class="contact-form" name="contact" method="POST" data-netlify="true">
         <div class="row">
           <label for="name">Name</label>
           <input id="name" name="name" type="text" placeholder="Name " required>
@@ -70,7 +71,7 @@
     </a>
   </div>
 </footer>
-
+   <div class="scanline"></div>
   <script src="script.js"></script>
 </body>
 </html>
