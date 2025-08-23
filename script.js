@@ -1,4 +1,4 @@
-  // Inicialización principal cuando la página carga
+  // Main initialization when page loads
   document.addEventListener("DOMContentLoaded", () => {
     // Typewriter only for the title
     const titleEl = document.querySelector("header h1");
@@ -8,7 +8,7 @@
       typeWriter(titleEl, titleText, 100);
     }
 
-    // Detectar click en descarga de CV
+    // Detect CV download click
     const downloadBtn = document.querySelector('a[download]');
     if (downloadBtn) {
       downloadBtn.addEventListener('click', handleDownload);
