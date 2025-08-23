@@ -27,3 +27,12 @@ portfolio/
     └── cv/
         └── cv1.pdf
 
+⚡ Getting Started
+  git clone https://github.com/crigca/miPortfolio_sr
+
+ 🌍 Live Demo
+https://cristian-calvo.netlify.app/
+
+👤 Author
+Cristian Calvo
+

@@ -32,7 +32,12 @@
 
   <section>
     <div class="wrap">
-      <form class="contact-form" name="contact" method="POST" netlify>
+      <form class="contact-form" name="contact" method="POST" netlify netlify-honeypot="bot-field">
+       <!-- anti-spam field -->
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none;">
+        <label>Don't fill this out: <input name="bot-field"></label>
+          </p> 
         <div class="row">
           <label for="name">Name</label>
           <input id="name" name="name" type="text" placeholder="Name " required>
