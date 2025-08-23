@@ -1,4 +1,4 @@
-// Typewriter solo para el título
+// Typewriter onluy for the title
 document.addEventListener("DOMContentLoaded", () => {
   const titleEl = document.querySelector("header h1");
 
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
- //Funcion que escribe el texto letra por letra
+ //Function that types text letter by letter
 function typeWriter(el, text, speed) {
   let i = 0;
   (function step() {
@@ -23,7 +23,7 @@ function typeWriter(el, text, speed) {
 
 
 
-// Manejar formulario con Netlify
+// Handle form wht Netlify
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector('.contact-form');
   
@@ -39,13 +39,13 @@ async function handleNetlifySubmit(e) {
   const button = e.target.querySelector('button[type="submit"]');
   const originalText = button.textContent;
   
-  // Estado enviando
+  // Sending state
   button.disabled = true;
   button.textContent = 'TRANSMITTING...';
   button.style.opacity = '0.7';
   
   try {
-    // Enviar a Netlify
+    // Send to Netlify
     const response = await fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -53,7 +53,6 @@ async function handleNetlifySubmit(e) {
     });
     
     if (response.ok) {
-      // Éxito - Mostrar notificación estilo INSIDE
       showMatrixNotification('SUCCESS', 'Message transmitted successfully');
       e.target.reset();
     } else {
@@ -63,7 +62,7 @@ async function handleNetlifySubmit(e) {
     showMatrixNotification('ERROR', 'Connection lost');
   }
   
-  // Restaurar botón
+  // Restore bitton
   setTimeout(() => {
     button.disabled = false;
     button.textContent = originalText;
@@ -71,9 +70,9 @@ async function handleNetlifySubmit(e) {
   }, 2000);
 }
 
-// Notificación estilo Matrix/INSIDE
+// Matrix style notification
 function showMatrixNotification(type, message) {
-  // Remover notificación anterior si existe
+  
   const existing = document.querySelector('.matrix-notification');
   if (existing) existing.remove();
   
@@ -85,15 +84,15 @@ function showMatrixNotification(type, message) {
     <span class="notification-msg">${message}</span>
   `;
   
-  // Agregar clase según tipo
+  
   notification.classList.add(type.toLowerCase());
   
   document.body.appendChild(notification);
   
-  // Animar entrada
+ 
   setTimeout(() => notification.classList.add('show'), 10);
   
-  // Remover después de 4 segundos
+  // Remove after 4 seconds
   setTimeout(() => {
     notification.classList.remove('show');
     setTimeout(() => notification.remove(), 600);
