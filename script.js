@@ -1,5 +1,8 @@
   // Main initialization when page loads
   document.addEventListener("DOMContentLoaded", () => {
+    // Initialize language selector
+    initLanguageSelector();
+
     // Typewriter only for the title
     const titleEl = document.querySelector("header h1");
     if (titleEl) {
@@ -78,6 +81,41 @@
       button.textContent = originalText;
       button.style.opacity = '1';
     }, 2000);
+  }
+
+  // Language selector functionality
+  function initLanguageSelector() {
+    const langButtons = document.querySelectorAll('.lang-btn');
+    let currentLang = localStorage.getItem('language') || 'en';
+    
+    // Set initial state
+    updateLanguageButtons(currentLang);
+    
+    langButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const selectedLang = e.target.dataset.lang;
+        if (selectedLang !== currentLang) {
+          currentLang = selectedLang; // Update the current language
+          localStorage.setItem('language', selectedLang);
+          updateLanguageButtons(selectedLang);
+          const langMessages = { 
+            en: 'Language switched to ENGLISH', 
+            es: 'Idioma cambiado a ESPAÑOL' 
+          };
+          showMatrixNotification('LANG', langMessages[selectedLang]);
+          
+          // Here you can add actual language switching logic
+          // For now, we'll just show the notification
+        }
+      });
+    });
+  }
+
+  function updateLanguageButtons(activeLang) {
+    const langButtons = document.querySelectorAll('.lang-btn');
+    langButtons.forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === activeLang);
+    });
   }
 
   // Matrix style notification
